@@ -22,3 +22,14 @@ st.markdown(f"""
 image_path = os.path.join("images", info['사진_url'])
 img = Image.open(image_path)
 st.image(img, width=250)
+import os
+
+image_path = os.path.join("images", info['사진_url'])
+st.write(f"이미지 경로: {image_path}")
+st.write(f"파일 존재 여부: {os.path.exists(image_path)}")
+
+if os.path.exists(image_path):
+    img = Image.open(image_path)
+    st.image(img, width=250)
+else:
+    st.error("이미지 파일을 찾을 수 없습니다.")
