@@ -24,7 +24,7 @@ st.markdown(f"""
 
 # 이미지 경로 = 사진 파일명 (main.py와 같은 폴더)
 image_path = info['사진_url']
-st.write(f"이미지 경로: {image_path}")
+
 
 # 이미지 파일 존재 여부 확인 후 출력
 if os.path.exists(image_path):
