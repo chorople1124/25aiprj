@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 from PIL import Image
+import os
 
 st.title("🇰🇷 대한민국 역대 대통령 정보")
 
@@ -17,5 +18,7 @@ st.markdown(f"""
 - **주요 특징:** {info['주요 특징']}
 """)
 
-# 이미지 보여주기
-st.image(info['사진_url'], width=250)
+# 로컬 이미지 경로 생성 후 출력
+image_path = os.path.join("images", info['사진_url'])
+img = Image.open(image_path)
+st.image(img, width=250)
