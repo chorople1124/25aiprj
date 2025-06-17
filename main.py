@@ -38,10 +38,3 @@ if os.path.exists(image_path):
 else:
     st.error("❗ 이미지가 없습니다.")
 
-# 명언 페이지로 이동 안내
-st.markdown("---")
-st.markdown("👉 아래 버튼을 눌러 **명언 페이지로 이동**하세요.")
-
-# 버튼 클릭 시 유저에게 페이지 전환 안내
-if st.button("💬 명언 페이지로 이동"):
-    st.success("좌측 상단 사이드바에서 **💬 명언 모음** 페이지를 클릭하세요!")
