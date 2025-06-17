@@ -3,6 +3,7 @@ import pandas as pd
 from PIL import Image
 import os
 
+st.set_page_config(page_title="세계 대통령 정보", layout="centered")
 st.title("🌏 세계 주요 국가 대통령/지도자 정보")
 
 # CSV 읽기
@@ -32,9 +33,11 @@ st.markdown(f"""
 # 이미지 경로
 image_path = info['사진_url']
 
-# 이미지 존재 여부 확인 후 출력
+# 이미지 출력
 if os.path.exists(image_path):
-    img = Image.open(image_path)
-    st.image(img, width=250)
+    st.image(Image.open(image_path), width=250)
 else:
     st.error("❗ 이미지 파일을 찾을 수 없습니다. 이미지가 올바른 경로에 있는지 확인하세요.")
+
+# 안내 메시지
+st.info("왼쪽 사이드바에서 '💬 명언 모음집' 페이지를 선택해 명언을 확인할 수 있습니다.")
